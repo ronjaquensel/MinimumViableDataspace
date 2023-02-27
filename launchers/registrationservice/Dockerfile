@@ -17,6 +17,7 @@ RUN curl --fail -LO https://github.com/microsoft/ApplicationInsights-Java/releas
 COPY ./build/libs/app.jar /app
 
 EXPOSE 8182
+EXPOSE 7171
 
 # health status is determined by the availability of the /health endpoint
 HEALTHCHECK --interval=5s --timeout=5s --retries=10 CMD curl --fail http://localhost:8181/api/check/health

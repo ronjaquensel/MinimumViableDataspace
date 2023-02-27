@@ -19,6 +19,7 @@ COPY ./build/libs/app.jar /app
 EXPOSE 8181
 EXPOSE 9191
 EXPOSE 8282
+EXPOSE 7171
 
 # health status is determined by the availability of the /health endpoint
 HEALTHCHECK --interval=5s --timeout=5s --retries=10 CMD curl -H "X-Api-Key: $EDC_API_AUTH_KEY" --fail http://localhost:8181/api/check/health
