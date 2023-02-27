@@ -53,6 +53,7 @@ locals {
   edc_default_port    = 8181
   edc_ids_port        = 8282
   edc_management_port = 9191
+  edc_identity_port   = 7171
 }
 
 resource "azurerm_resource_group" "participant" {
@@ -92,6 +93,11 @@ resource "azurerm_container_group" "edc" {
 
     ports {
       port     = local.edc_management_port
+      protocol = "TCP"
+    }
+
+    ports {
+      port     = local.edc_identity_port
       protocol = "TCP"
     }
 
