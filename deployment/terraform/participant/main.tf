@@ -140,16 +140,6 @@ resource "azurerm_container_group" "edc" {
 
       APPLICATIONINSIGHTS_CONNECTION_STRING = var.app_insights_connection_string
     }
-
-    liveness_probe {
-      http_get {
-        port = 8181
-        path = "/api/check/health"
-      }
-      initial_delay_seconds = 10
-      failure_threshold     = 6
-      timeout_seconds       = 3
-    }
   }
 }
 
