@@ -256,21 +256,27 @@ jobs:
       company1_edc_host: ${{ steps.runterraform.outputs.company1_edc_host }}
       company2_edc_host: ${{ steps.runterraform.outputs.company2_edc_host }}
       company3_edc_host: ${{ steps.runterraform.outputs.company3_edc_host }}
+      company4_edc_host: ${{ steps.runterraform.outputs.company4_edc_host }}
       company1_key_vault: ${{ steps.runterraform.outputs.company1_key_vault }}
       company2_key_vault: ${{ steps.runterraform.outputs.company2_key_vault }}
       company3_key_vault: ${{ steps.runterraform.outputs.company3_key_vault }}
+      company4_key_vault: ${{ steps.runterraform.outputs.company4_key_vault }}
       company1_api_key: ${{ steps.runterraform.outputs.company1_api_key }}
       company2_api_key: ${{ steps.runterraform.outputs.company2_api_key }}
       company3_api_key: ${{ steps.runterraform.outputs.company3_api_key }}
+      company4_api_key: ${{ steps.runterraform.outputs.company4_api_key }}
       company1_participant_did_host: ${{ steps.runterraform.outputs.company1_participant_did_host }}
       company2_participant_did_host: ${{ steps.runterraform.outputs.company2_participant_did_host }}
       company3_participant_did_host: ${{ steps.runterraform.outputs.company3_participant_did_host }}
+      company4_participant_did_host: ${{ steps.runterraform.outputs.company4_participant_did_host }}
       company1_connector_name: ${{ steps.runterraform.outputs.company1_connector_name }}
       company2_connector_name: ${{ steps.runterraform.outputs.company2_connector_name }}
       company3_connector_name: ${{ steps.runterraform.outputs.company3_connector_name }}
+      company4_connector_name: ${{ steps.runterraform.outputs.company4_connector_name }}
       company1_assets_storage_account: ${{ steps.runterraform.outputs.company1_assets_storage_account }}
       company2_assets_storage_account: ${{ steps.runterraform.outputs.company2_assets_storage_account }}
       company3_assets_storage_account: ${{ steps.runterraform.outputs.company3_assets_storage_account }}
+      company4_assets_storage_account: ${{ steps.runterraform.outputs.company4_assets_storage_account }}
 
     strategy:
       matrix: ${{ fromJson(needs.Inputs.outputs.matrix) }}
@@ -505,6 +511,7 @@ jobs:
           COMPANY1_IDENTITY_HUB_URL: http://${{ needs.Deploy-Participants.outputs.company1_edc_host }}:8181/api/identity-hub
           COMPANY2_IDENTITY_HUB_URL: http://${{ needs.Deploy-Participants.outputs.company2_edc_host }}:8181/api/identity-hub
           COMPANY3_IDENTITY_HUB_URL: http://${{ needs.Deploy-Participants.outputs.company3_edc_host }}:8181/api/identity-hub
+          COMPANY4_IDENTITY_HUB_URL: http://${{ needs.Deploy-Participants.outputs.company4_edc_host }}:8181/api/identity-hub
           AUTHORITY_IDENTITY_HUB_URL: http://${{ needs.Deploy-Dataspace.outputs.registration_service_host }}:8181/api/identity-hub
           API_KEY: ${{ needs.Deploy-Participants.outputs.company2_api_key }}
           TEST_ENVIRONMENT: "cloud"
