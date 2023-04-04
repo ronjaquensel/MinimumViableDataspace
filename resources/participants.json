@@ -17,6 +17,12 @@
       "region": "us",
       "country": "US",
       "data_dashboard_theme": "theme-3"
+    },
+    {
+      "participant": "company4",
+      "region": "eu",
+      "country": "DE",
+      "data_dashboard_theme": "theme-3"
     }
   ]
 }

@@ -46,6 +46,7 @@ class IdentityHubIntegrationTest {
     static final String COMPANY1_IDENTITY_HUB_URL = requiredPropOrEnv("COMPANY1_IDENTITY_HUB_URL", "http://localhost:8181/api/identity-hub");
     static final String COMPANY2_IDENTITY_HUB_URL = requiredPropOrEnv("COMPANY2_IDENTITY_HUB_URL", "http://localhost:8182/api/identity-hub");
     static final String COMPANY3_IDENTITY_HUB_URL = requiredPropOrEnv("COMPANY3_IDENTITY_HUB_URL", "http://localhost:8183/api/identity-hub");
+    static final String COMPANY4_IDENTITY_HUB_URL = requiredPropOrEnv("COMPANY4_IDENTITY_HUB_URL", "http://localhost:8187/api/identity-hub");
     static final String AUTHORITY_IDENTITY_HUB_URL = requiredPropOrEnv("AUTHORITY_IDENTITY_HUB_URL", "http://localhost:8185/api/identity-hub");
 
     private static final OkHttpClient OK_HTTP_CLIENT = new OkHttpClient.Builder()
@@ -139,7 +140,8 @@ class IdentityHubIntegrationTest {
         return Stream.of(
                 arguments(COMPANY1_IDENTITY_HUB_URL, "eu", "FR"),
                 arguments(COMPANY2_IDENTITY_HUB_URL, "eu", "DE"),
-                arguments(COMPANY3_IDENTITY_HUB_URL, "us", "US")
+                arguments(COMPANY3_IDENTITY_HUB_URL, "us", "US"),
+                arguments(COMPANY4_IDENTITY_HUB_URL, "eu", "DE")
         );
     }
 
